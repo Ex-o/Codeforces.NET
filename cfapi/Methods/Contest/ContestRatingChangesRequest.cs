@@ -16,5 +16,15 @@ namespace cfapi.Methods
             var ret = await GetAsync($"http://codeforces.com/api/contest.ratingChanges?contestId={contestId}");
             return ret.Result;
         }
+
+        /// <summary>
+        /// Gets all rating changes of the contest specified.
+        /// </summary>
+        /// <param name="contestId"></param>
+        /// <returns></returns>
+        public List<RatingChange> GetRatingChanges(int contestId)
+        {
+            return Get($"http://codeforces.com/api/contest.ratingChanges?contestId={contestId}").Result;
+        }
     }
 }

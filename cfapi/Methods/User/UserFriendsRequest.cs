@@ -22,5 +22,15 @@ namespace cfapi.Methods
             var res = await GetAsync("http://codeforces.com/api/user.friends");
             return res.Result;
         }
+
+        /// <summary>
+        /// Requests list of friend names of the specified authorized user.
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetFriends()
+        {
+            var res = Get("http://codeforces.com/api/user.friends");
+            return res.Result;
+        }
     }
 }

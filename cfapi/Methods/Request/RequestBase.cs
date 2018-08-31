@@ -17,7 +17,7 @@ namespace cfapi.Methods
 
         }
         /// <summary>
-        /// Sends API Request.
+        /// Sends an API request asynchronously.
         /// </summary>
         /// <param name="url">Api Request URL</param>
         /// <returns>T: Requested object.</returns>
@@ -36,6 +36,27 @@ namespace cfapi.Methods
                 return null;
             }
         }
+
+        /// <summary>
+        /// Sends an API request synchronously.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        protected virtual ApiResponse<TObject> Get(string url)
+        {
+            try
+            {
+                using (var webClient = new WebClient())
+                {
+                    var apiData = webClient.DownloadString(url);
+                    return Deserialize(HttpUtility.HtmlDecode(apiData));
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
         /// <summary>
         /// Deserializes API data into JSON.
         /// </summary>
@@ -44,7 +65,7 @@ namespace cfapi.Methods
         private ApiResponse<TObject> Deserialize(string apiData)
         {
             /*
-             * Work around to have consistent ApiResponse<T>
+             * Work around to have consistent ApiResponse<T>.Result as List<T>
              */
 
             var index = apiData.IndexOf("result\":");

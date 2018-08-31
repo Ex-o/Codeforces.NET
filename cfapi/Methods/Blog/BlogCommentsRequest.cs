@@ -19,5 +19,15 @@ namespace cfapi.Methods
             var res = await GetAsync($"http://codeforces.com/api/blogEntry.comments?blogEntryId={blogEntryId}");
             return res.Result;
         }
+
+        /// <summary>
+        /// Requests the comments of the specified blog.
+        /// </summary>
+        /// <param name="blogEntryId"></param>
+        /// <returns></returns>
+        public List<BlogComment> GetBlogCommentsById(int blogEntryId)
+        {
+            return Get($"http://codeforces.com/api/blogEntry.comments?blogEntryId={blogEntryId}").Result;
+        }
     }
 }

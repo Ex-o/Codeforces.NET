@@ -22,7 +22,7 @@ namespace cfapi.Methods.Request
             this._token = token;
         }
         /// <summary>
-        /// Downloads API data.
+        /// Sends an authorized API request asynchronously.
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
@@ -33,6 +33,18 @@ namespace cfapi.Methods.Request
             Console.WriteLine(req);
             return await base.GetAsync(req);
         }
-        
+
+        /// <summary>
+        /// Sends an authorized API request synchronously.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        protected override ApiResponse<TObject> Get(string url)
+        {
+            var args = url.Replace("http://codeforces.com/api/", "");
+            var req = url + CodeforcesHelper.GenerateSignature(args, _token);
+            Console.WriteLine(req);
+            return base.Get(req);
+        }
     }
 }

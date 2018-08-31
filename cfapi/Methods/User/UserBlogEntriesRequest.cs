@@ -20,5 +20,17 @@ namespace cfapi.Methods
 
             return res.Result;
         }
+
+        /// <summary>
+        /// Requests all blog entries of the specified user.
+        /// </summary>
+        /// <param name="userHandle"></param>
+        /// <returns></returns>
+        public List<BlogEntry> GetBlogEntries(string userHandle)
+        {
+            var res = Get($"http://codeforces.com/api/user.blogEntries?handle={userHandle}");
+
+            return res.Result;
+        }
     }
 }

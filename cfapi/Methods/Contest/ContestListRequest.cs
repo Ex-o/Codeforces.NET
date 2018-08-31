@@ -17,5 +17,15 @@ namespace cfapi.Methods
 
            return ret.Result;
         }
+
+        /// <summary>
+        /// Gets a list of Round/Gym Contests.
+        /// </summary>
+        /// <param name="includeGym"></param>
+        /// <returns>A list of Contest objects</returns>
+        public List<Contest> GetContestList(bool includeGym = false)
+        {
+            return Get($"http://codeforces.com/api/contest.list?gym={includeGym.ToString()}").Result;
+        }
     }
 }
