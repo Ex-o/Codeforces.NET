@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8564228-C0F1-4EBB-933E-06504222F37E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cfapi</RootNamespace>
+    <AssemblyName>cfapi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiResponse.cs" />
+    <Compile Include="Helpers\CodeforcesHelper.cs" />
+    <Compile Include="Methods\Blog\BlogCommentsRequest.cs" />
+    <Compile Include="Methods\Blog\BlogEntryRequest.cs" />
+    <Compile Include="Methods\Contest\ContestListRequest.cs" />
+    <Compile Include="Methods\Contest\ContestStandingsRequest.cs" />
+    <Compile Include="Methods\Contest\ContestStatusRequest.cs" />
+    <Compile Include="Methods\Contest\ContestHacksRequest.cs" />
+    <Compile Include="Methods\Contest\ContestRatingChangesRequest.cs" />
+    <Compile Include="Methods\Request\AuthorizedRequestBase.cs" />
+    <Compile Include="Methods\Request\RequestBase.cs" />
+    <Compile Include="Methods\Request\SecurityToken.cs" />
+    <Compile Include="Methods\User\UserBlogEntriesRequest.cs" />
+    <Compile Include="Methods\User\UserFriendsRequest.cs" />
+    <Compile Include="Methods\User\UserInfoRequest.cs" />
+    <Compile Include="Methods\User\UserStatusRequest.cs" />
+    <Compile Include="Objects\BlogComment.cs" />
+    <Compile Include="Objects\BlogEntry.cs" />
+    <Compile Include="Objects\Contest.cs" />
+    <Compile Include="Objects\JudgeProtocol.cs" />
+    <Compile Include="Objects\Member.cs" />
+    <Compile Include="Objects\Standing.cs" />
+    <Compile Include="Objects\Types\ContestPhase.cs" />
+    <Compile Include="Objects\Types\ContestType.cs" />
+    <Compile Include="Objects\Hack.cs" />
+    <Compile Include="Objects\IApiObject.cs" />
+    <Compile Include="Objects\Party.cs" />
+    <Compile Include="Objects\Problem.cs" />
+    <Compile Include="Objects\ProblemResult.cs" />
+    <Compile Include="Objects\ProblemStatistics.cs" />
+    <Compile Include="Objects\RanklistRow.cs" />
+    <Compile Include="Objects\RatingChange.cs" />
+    <Compile Include="Objects\Submission.cs" />
+    <Compile Include="Objects\Types\HackVerdict.cs" />
+    <Compile Include="Objects\Types\ParticipantType.cs" />
+    <Compile Include="Objects\Types\ProblemResultType.cs" />
+    <Compile Include="Objects\Types\ProblemType.cs" />
+    <Compile Include="Objects\Types\SubmissionVerdict.cs" />
+    <Compile Include="Objects\Types\TestSet.cs" />
+    <Compile Include="Objects\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

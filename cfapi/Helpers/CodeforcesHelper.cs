@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using cfapi.Methods.Request;
+
+namespace cfapi.Helpers
+{
+    public static class CodeforcesHelper
+    {
+        /// <summary>
+        /// Gets time in Unix format.
+        /// </summary>
+        /// <returns></returns>
+        public static int GetCodeforcesTime()
+        {
+            return (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+        }
+        /// <summary>
+        /// Generates authorized signature for requests requiring authorization.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static string GenerateSignature(string args, SecurityToken token)
+        {
+            if (string.IsNullOrEmpty(token?.Key) ||
+                string.IsNullOrEmpty(token.Secret) ||
+                string.IsNullOrEmpty(token.Random))
+            {
+                return "";
+            }
+
+            var flag = args.Contains("?") ? "&" : "?";
+
+            var signature =
+                $"{flag}apiKey={token.Key}&time={CodeforcesHelper.GetCodeforcesTime()}";
+
+            var hash = $"{token.Random}/{args}{signature}#{token.Secret}";
+            Console.WriteLine("To be hashed:\n" + hash);
+            var bytes = Encoding.UTF8.GetBytes(hash);
+            using (var alg = SHA512.Create())
+            {
+                alg.ComputeHash(bytes);
+                signature += $"&apiSig={token.Random}" + BitConverter.ToString(alg.Hash).Replace("-", "").ToLower();
+            }
+
+            return signature;
+        }
+    }
+}

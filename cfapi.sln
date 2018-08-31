@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfapi", "cfapi\cfapi.csproj", "{B8564228-C0F1-4EBB-933E-06504222F37E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfapiClient", "cfapiClient\cfapiClient.csproj", "{20CA0F4A-0B58-412D-8B20-9BA626891F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8564228-C0F1-4EBB-933E-06504222F37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8564228-C0F1-4EBB-933E-06504222F37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8564228-C0F1-4EBB-933E-06504222F37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8564228-C0F1-4EBB-933E-06504222F37E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20CA0F4A-0B58-412D-8B20-9BA626891F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CA0F4A-0B58-412D-8B20-9BA626891F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CA0F4A-0B58-412D-8B20-9BA626891F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CA0F4A-0B58-412D-8B20-9BA626891F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30266D8B-8D94-4E19-86BF-983BB982F5E7}
+	EndGlobalSection
+EndGlobal
