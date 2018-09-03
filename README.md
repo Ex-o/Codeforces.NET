@@ -7,9 +7,13 @@ This let's you manipulate data supplied by the [codeforces api](https://codeforc
 ### Status:
 So far I have got everything accessible through the api including authorized requests. The wrapper has synchronous/asynchronous methods for everything and objects are supplied with loaders for sub-objects.
 
+#### Ongoing projects:
+[Competitive Programming Community Website(https://cp.fayox.com)](https://github.com/Ex-o/cf)
 ### Contribute:
 Doesn't matter if it's contributing to the wrapper or if you have a project idea that would need it. Feel free to propse any ideas or mention your project and I will refer to it here.
 
+### Donate:
+BTC: 1B5oK21fAJRHcuhSDHdJcC7AX9UGFCimZk
 |[![discord](https://cdn.discordapp.com/attachments/266240393639755778/281920766490968064/discord.png)](https://discord.gg/algorithms)|
 |---|
 | **Join the Competitive Programming Community Discord for help** |
