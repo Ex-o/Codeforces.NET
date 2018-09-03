@@ -14,6 +14,7 @@ Doesn't matter if it's contributing to the wrapper or if you have a project idea
 
 ### Donate:
 BTC: 1B5oK21fAJRHcuhSDHdJcC7AX9UGFCimZk
+
 |[![discord](https://cdn.discordapp.com/attachments/266240393639755778/281920766490968064/discord.png)](https://discord.gg/algorithms)|
 |---|
 | **Join the Competitive Programming Community Discord for help** |
