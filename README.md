@@ -10,6 +10,6 @@ So far I have got everything accessible through the api including authorized req
 ### Contribute:
 Doesn't matter if it's contributing to the wrapper or if you have a project idea that would need it. Feel free to propse any ideas or mention your project and I will refer to it here.
 
-|[![discord]((https://cdn.discordapp.com/attachments/266240393639755778/281920766490968064/discord.png)](https://discord.gg/algorithms)|
+|[![discord](https://cdn.discordapp.com/attachments/266240393639755778/281920766490968064/discord.png)](https://discord.gg/algorithms)|
 |---|
 | **Join the Competitive Programming Community Discord for help** |
