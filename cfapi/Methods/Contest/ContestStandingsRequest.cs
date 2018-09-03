@@ -26,7 +26,7 @@ namespace cfapi.Methods
                 req += "&from=true";
 
             var ret = await GetAsync(req);
-            return ret.Result[0];
+            return ret?.Result[0];
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace cfapi.Methods
                 req += "&from=true";
 
             var ret = Get(req);
-            return ret.Result[0];
+            return ret?.Result[0];
         }
     }
 }
