@@ -30,7 +30,7 @@ namespace cfapi.Objects
         [JsonProperty("programmingLanguage")]
         public string ProgrammingLanguage { get; set; }
 
-        [JsonProperty("verdit")]
+        [JsonProperty("verdict")]
         public SubmissionVerdict Verdict { get; set; }
 
         [JsonProperty("testset")]

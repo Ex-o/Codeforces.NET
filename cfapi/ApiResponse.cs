@@ -22,7 +22,7 @@ namespace cfapi
         public string Comment { get; set; }
 
         /// <summary>
-        /// Request object(s) result.
+        /// Request object(s) result always in a list!
         /// </summary>
         [JsonProperty("result")]
         public List<T> Result { get; set; }

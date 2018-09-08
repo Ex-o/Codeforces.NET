@@ -16,7 +16,7 @@ namespace cfapi.Methods
         /// <returns></returns>
         public async Task<List<Submission>> GetUserSubmissionsAsync(string userHandle, int from = 1, int count = 1)
         {
-            string req = $"http://codeforces.com/api/user.status?handle=Fefer_Ivan";
+            string req = $"http://codeforces.com/api/user.status?handle={userHandle}";
 
             if (count > 1)
                 req += $"&count={count}";
@@ -36,7 +36,7 @@ namespace cfapi.Methods
         /// <returns></returns>
         public List<Submission> GetUserSubmissions(string userHandle, int from = 1, int count = 1)
         {
-            string req = $"http://codeforces.com/api/user.status?handle=Fefer_Ivan";
+            string req = $"http://codeforces.com/api/user.status?handle={userHandle}";
 
             if (count > 1)
                 req += $"&count={count}";

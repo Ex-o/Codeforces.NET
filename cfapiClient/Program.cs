@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using cfapi.Methods;
@@ -38,7 +39,7 @@ namespace cfapiClient
                 var req = new ContestStandingsRequest();
                 var contestDetails = await req.GetContestStandingsAsync(contestId: contest.Id, from: 1, count: 1);
                 var contestProblems = contestDetails?.Problems;
-                Console.WriteLine(contest.Id);
+                
                 if(contestProblems == null) continue;
                 
                 foreach (var problem in contestProblems)
@@ -52,9 +53,21 @@ namespace cfapiClient
             Console.WriteLine("Done!");
         }
 
+        public static async Task Test()
+        {
+            var request = new UserStatusRequest();
+            var submissions = await request.GetUserSubmissionsAsync("Laggy", from: 1, count: 2);
+            foreach (var submission in submissions)
+            {
+                Console.WriteLine(submission.Id);
+                Console.WriteLine(submission.Problem.Name);
+                Console.WriteLine(submission.Verdict.ToString());
+            }
+        }
+
         static void Main(string[] args)
         {
-            BruteforceProblems();
+            Test();
 
             Console.Read();
         }
