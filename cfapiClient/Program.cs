@@ -56,18 +56,26 @@ namespace cfapiClient
         public static async Task Test()
         {
             var request = new UserStatusRequest();
-            var submissions = await request.GetUserSubmissionsAsync("Laggy", from: 1, count: 2);
-            foreach (var submission in submissions)
-            {
-                Console.WriteLine(submission.Id);
-                Console.WriteLine(submission.Problem.Name);
-                Console.WriteLine(submission.Verdict.ToString());
-            }
+            var submissions = await request.GetUserSubmissionsAsync("handle");
+            var acceptedSubmissions = submissions.Where(i => i.Verdict == SubmissionVerdict.OK);
         }
 
+        public static async Task GetTopHacks()
+        {
+            var req = new ContestStandingsRequest();
+            var standings = await req.GetContestStandingsAsync(contestId: 1051, from: 1, count: 100000, showUnofficial: true);
+
+            standings.Rows = standings.Rows.OrderByDescending(i => i.SucessfulHackCount)
+                .ThenByDescending(i => -i.UnSucessfulHackCount).ToList();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"{standings.Rows[i].Party.Members[0].Handle} has +{standings.Rows[i].SucessfulHackCount} | -{standings.Rows[i].UnSucessfulHackCount}");
+            }
+        }
         static void Main(string[] args)
         {
-            Test();
+            GetTopHacks();
 
             Console.Read();
         }

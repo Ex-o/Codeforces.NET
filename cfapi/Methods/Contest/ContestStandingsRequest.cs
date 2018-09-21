@@ -22,9 +22,8 @@ namespace cfapi.Methods
 
             if (count != 0) 
                 req += $"&from={from}&count={count}";
-            if (showUnofficial)
-                req += "&from=true";
-
+        
+            req += $"&showUnofficial={showUnofficial}";
             var ret = await GetAsync(req);
             return ret?.Result[0];
         }
