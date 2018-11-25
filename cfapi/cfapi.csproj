@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,8 @@
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
     <Compile Include="Helpers\CodeforcesHelper.cs" />
+    <Compile Include="HTTP\Downloader.cs" />
+    <Compile Include="HTTP\Session.cs" />
     <Compile Include="Methods\Blog\BlogCommentsRequest.cs" />
     <Compile Include="Methods\Blog\BlogEntryRequest.cs" />
     <Compile Include="Methods\Contest\ContestListRequest.cs" />
@@ -53,6 +56,7 @@
     <Compile Include="Methods\Contest\ContestStatusRequest.cs" />
     <Compile Include="Methods\Contest\ContestHacksRequest.cs" />
     <Compile Include="Methods\Contest\ContestRatingChangesRequest.cs" />
+    <Compile Include="Methods\ProblemSet\ProblemsRequest.cs" />
     <Compile Include="Methods\Request\AuthorizedRequestBase.cs" />
     <Compile Include="Methods\Request\RequestBase.cs" />
     <Compile Include="Methods\Request\SecurityToken.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="Objects\Contest.cs" />
     <Compile Include="Objects\JudgeProtocol.cs" />
     <Compile Include="Objects\Member.cs" />
+    <Compile Include="Objects\ProblemSet.cs" />
     <Compile Include="Objects\Standing.cs" />
     <Compile Include="Objects\Types\ContestPhase.cs" />
     <Compile Include="Objects\Types\ContestType.cs" />

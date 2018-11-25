@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using cfapi.HTTP;
 using cfapi.Methods;
 using cfapi.Methods.Request;
 using cfapi.Objects;
@@ -73,10 +79,44 @@ namespace cfapiClient
                 Console.WriteLine($"{standings.Rows[i].Party.Members[0].Handle} has +{standings.Rows[i].SucessfulHackCount} | -{standings.Rows[i].UnSucessfulHackCount}");
             }
         }
+
+        public static async Task BuildGym()
+        {
+            var req = new ContestListRequest();
+            var gymList = await req.GetContestListAsync(true);
+
+            Dictionary<int, List<Problem>> dic = new Dictionary<int, List<Problem>>();
+            foreach (var contest in gymList)
+            {
+                var req2 = new ContestStandingsRequest();
+                var standings = await req2.GetContestStandingsAsync(contest.Id, 1, 1);
+
+                dic.Add(contest.Id, new List<Problem>());
+                foreach (var problem in standings.Problems)
+                {
+                    dic[contest.Id].Add(problem);
+                }
+            }
+
+            Console.WriteLine("Done");
+            var properDic = dic.ToDictionary(k => k.Key.ToString(), v => v.Value);
+            var serializer = new JavaScriptSerializer().Serialize(properDic);
+            File.WriteAllText("contests.json", serializer);
+        }
+
+        public static async void GetSet()
+        {
+            var req = new ProblemsRequest();
+            var res = await req.GetProblemSetAsync();
+
+            foreach (var problem in res.Problems)
+            {
+                Console.WriteLine(problem.Name);
+            }
+        }
         static void Main(string[] args)
         {
-            GetTopHacks();
-
+            GetSet();
             Console.Read();
         }
     }
