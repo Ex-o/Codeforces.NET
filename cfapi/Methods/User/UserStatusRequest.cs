@@ -44,7 +44,7 @@ namespace cfapi.Methods
                 req += $"&from{from}";
 
             var res = Get(req);
-            return res.Result;
+            return res?.Result;
         }
     }
 }

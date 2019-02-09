@@ -49,5 +49,32 @@ namespace cfapi.Helpers
 
             return signature;
         }
+        public static double GetWinProbablility(double ra, double rb)
+        {
+            return 1.0 / (1.0 + Math.Pow(10.0, (rb - ra) / 400.0));
+        }
+        public static double AggregateRatings(List<double> teamRatings)
+        {
+            double left = 1;
+            double right = 1E4;
+
+            for (int tt = 0; tt < 100; tt++)
+            {
+                double r = (left + right) / 2.0;
+
+                double rWinsProbability = 1.0;
+                foreach(var rate in teamRatings)
+                    rWinsProbability *= GetWinProbablility(r, rate);
+
+                double rating = Math.Log10(1 / (rWinsProbability) - 1) * 400 + r;
+
+                if (rating > r)
+                    left = r;
+                else
+                    right = r;
+            }
+
+            return (left + right) / 2.0;
+        }
     }
 }

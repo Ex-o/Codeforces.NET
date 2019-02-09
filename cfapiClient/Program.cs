@@ -171,7 +171,7 @@ namespace cfapiClient
         static void Main(string[] args)
         {
             List<ICPCTeam> icpcTeams = new List<ICPCTeam>();
-            using (SqlConnection con = new SqlConnection("Data Source = 192.168.134.133, 1433; Network Library=DBMSSOCN; Initial Catalog = SRO_CERTIFICATION; User ID = sa; Password = Khaled1337"))
+            using (SqlConnection con = new SqlConnection("Data Source = 192.168.134.133, 1433; Network Library=DBMSSOCN; Initial Catalog = DB; User ID = sa; Password = pw"))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM _ICPCEntries", con);
