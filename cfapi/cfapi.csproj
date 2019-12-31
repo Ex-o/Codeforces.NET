@@ -63,6 +63,7 @@
     <Compile Include="Methods\User\UserBlogEntriesRequest.cs" />
     <Compile Include="Methods\User\UserFriendsRequest.cs" />
     <Compile Include="Methods\User\UserInfoRequest.cs" />
+    <Compile Include="Methods\User\UserRatingRequest.cs" />
     <Compile Include="Methods\User\UserStatusRequest.cs" />
     <Compile Include="Objects\BlogComment.cs" />
     <Compile Include="Objects\BlogEntry.cs" />
