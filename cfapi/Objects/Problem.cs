@@ -24,9 +24,11 @@ namespace cfapi.Objects
         [JsonProperty("type")]
         public ProblemType Type { get; set; }
 
-
         [JsonProperty("points")]
         public float Points { get; set; }
+
+        [JsonProperty("rating")]
+        public int Rating { get; set; }
 
         [JsonProperty("tags")]
         public List<string> Tags { get; set; }

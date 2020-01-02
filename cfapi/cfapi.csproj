@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
     <Compile Include="Helpers\CodeforcesHelper.cs" />
+    <Compile Include="Helpers\Filter.cs" />
+    <Compile Include="Helpers\SubmissionSeparator.cs" />
     <Compile Include="HTTP\Downloader.cs" />
     <Compile Include="HTTP\Session.cs" />
     <Compile Include="Methods\Blog\BlogCommentsRequest.cs" />
