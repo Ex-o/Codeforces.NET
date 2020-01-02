@@ -33,10 +33,13 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\algochan\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,9 +73,11 @@
     <Compile Include="Objects\BlogComment.cs" />
     <Compile Include="Objects\BlogEntry.cs" />
     <Compile Include="Objects\Contest.cs" />
+    <Compile Include="Objects\RankBase.cs" />
     <Compile Include="Objects\JudgeProtocol.cs" />
     <Compile Include="Objects\Member.cs" />
     <Compile Include="Objects\ProblemSet.cs" />
+    <Compile Include="Objects\Rank.cs" />
     <Compile Include="Objects\Standing.cs" />
     <Compile Include="Objects\Types\ContestPhase.cs" />
     <Compile Include="Objects\Types\ContestType.cs" />
