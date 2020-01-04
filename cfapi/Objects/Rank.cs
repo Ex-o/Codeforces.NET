@@ -46,6 +46,6 @@ namespace cfapi.Objects
     }
     public class LegendaryGrandmaster : RankBase
     {
-        public LegendaryGrandmaster() : base(3000, int.MaxValue, Color.FromRgb(170, 0, 0)) { }
+        public LegendaryGrandmaster() : base(3000, 5000, Color.FromRgb(170, 0, 0)) { }
     }
 }

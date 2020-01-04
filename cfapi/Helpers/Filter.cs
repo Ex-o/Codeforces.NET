@@ -15,6 +15,8 @@ namespace cfapi.Helpers
         }
         public static List<Submission> FilterSubmissions(this List<Submission> list, List<string> tags, bool inclusive = false)
         {
+            if (tags.Count == 1 && tags.First() == "") return list;
+
             if(inclusive)
             {
                 return list.Where(x => tags.All(y => x.Problem.Tags.Contains(y))).ToList();
